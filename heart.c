@@ -1,9 +1,11 @@
 // HỌC C CÙNG MÌNH
 // IN RA MÀN HÌNH, HÌNH TRÁI TIM CÓ KÍCH THƯỚC MxN=6x7
 #include <stdio.h> 
+#include <stdlib.h>
 // viết hàm
 void Heart(int M, int N)
 {
+    system("color 4");
     int i,j;
     // khởi tạo 2 vòng lặp for lồng nhau
     for(i=1; i<7; i++)
