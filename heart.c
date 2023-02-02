@@ -5,7 +5,7 @@
 // viết hàm
 void Heart( int N)
 {
-    system("color 4");
+    system("color 2");
     int i,j;
     // khởi tạo 2 vòng lặp for lồng nhau
     for(i=1; i<N; i++)
