@@ -3,14 +3,14 @@
 #include <stdio.h> 
 #include <stdlib.h>
 // viết hàm
-void Heart(int M, int N)
+void Heart( int N)
 {
     system("color 4");
     int i,j;
     // khởi tạo 2 vòng lặp for lồng nhau
-    for(i=1; i<7; i++)
+    for(i=1; i<N; i++)
     {
-        for(j=1; j<=7; j++)
+        for(j=1; j<=N; j++)
         {
             // điều kiện 
             if(!((i==1 && (j==1 || j==4 || j==7))
@@ -33,6 +33,6 @@ int main ()
 {
     int M=6, N=7;
     // lời gọi hàm 
-    Heart(M,N);
+    Heart(N);
     return 0;
 }
