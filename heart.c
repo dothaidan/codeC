@@ -17,15 +17,11 @@ void Heart( int N)
             // điều kiện 
             Sleep(100);
             if(!((i==1 && (j==1 || j==4 || j==7))
-            //Sleep(300);
             || (i==4 && (j==1 || j==7))
-            //Sleep(300);
             || (i==5 && (j<=2 || j>=6))
-           // Sleep(300);
             || (i==6 && (j<=3 || j>=5))))
-            //Sleep(300);
             {
-                //printf("\t");
+                
                 printf(" %c ", c);
             }
             else 

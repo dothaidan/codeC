@@ -6,12 +6,12 @@
 using namespace std;
 void loading()
 {
-	char a =177, b=219;
+	char a =3;
     cout << "\n\t\t\t\t\tLoading...\n\n";
     cout << "\t\t\t\t\t";
     for (int i=0; i<26; i++)
     {
-        cout << b;
+        cout << a;
         Sleep(100);
     }
     cout << "\nDa load xong!!!";
@@ -23,11 +23,11 @@ void loading()
 int main ()
 {
 	system("color 4");	
-    cout << "Nhan Enter de bat dau...";
-    cin.ignore();
+    //cout << "Nhan Enter de bat dau...";
+    //cin.ignore();
     loading();
     fstream newfile;
-    newfile.open("input5.txt", ios::in);
+    newfile.open("input2.txt", ios::in);
     if(newfile.is_open())
     {
     	system("color 4");
