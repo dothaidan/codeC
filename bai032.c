@@ -1,12 +1,12 @@
-// HỌC C CÙNG MÌNH 
-// Bài 32: Tìm phần tử max, min lớn thứ 2 trong mảng 
+// HỌC C CÙNG MÌNH
+// Bài 32: Tìm phần tử max, min lớn thứ 2 trong mảng
 #include <stdio.h>
 #include <limits.h>
 #include <stdlib.h>
 // function enterArray
 void enterArray(int x[], int n)
 {
-    for(int i=0; i<n; i++)
+    for (int i = 0; i < n; i++)
     {
         printf(" Enter a[%d] : ", i);
         scanf("%d", &x[i]);
@@ -16,33 +16,33 @@ void enterArray(int x[], int n)
 void printArray(int x[], int n)
 {
     printf("Values Array : ");
-    for(int i=0; i<n; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("%d ", x[i]);
-    } 
+    }
 }
 // function searchMax2
 int searchMax2(int x[], int n)
 {
-    int max=INT_MIN, maxTwo=INT_MIN;
-    for(int i=0; i<n; i++)
+    int max = INT_MIN, maxTwo = INT_MIN;
+    for (int i = 0; i < n; i++)
     {
-        if(x[i]>max)
+        if (x[i] > max)
         {
-            max=x[i];
+            max = x[i];
         }
     }
-    for(int i=0; i<n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(x[i]==max)
+        if (x[i] == max)
         {
             continue;
         }
-        else 
+        else
         {
-            if(x[i]>maxTwo)
+            if (x[i] > maxTwo)
             {
-                maxTwo=x[i];
+                maxTwo = x[i];
             }
         }
     }
@@ -51,43 +51,43 @@ int searchMax2(int x[], int n)
 // function searchMin2
 int searchMin2(int x[], int n)
 {
-    int min=INT_MAX, minTwo=INT_MAX;
-    for(int i=0; i<n; i++)
+    int min = INT_MAX, minTwo = INT_MAX;
+    for (int i = 0; i < n; i++)
     {
-        if(x[i]<min)
+        if (x[i] < min)
         {
-            min=x[i];
+            min = x[i];
         }
     }
-    for(int i=0; i<n; i++)
+    for (int i = 0; i < n; i++)
     {
-        if(x[i]==min)
+        if (x[i] == min)
         {
             continue;
         }
-        else 
+        else
         {
-            if(x[i]<minTwo)
+            if (x[i] < minTwo)
             {
-                minTwo=x[i];
+                minTwo = x[i];
             }
         }
     }
     return minTwo;
 }
-int main ()
+int main()
 {
-    // change color 
+    // change color
     system("color 2");
     int n, a[100];
-    do 
+    do
     {
         printf("Enter Element n(0<n<=100) : ");
         scanf("%d", &n);
-    }while(n<=0 || n>100);
-    enterArray(a,n);
-    printArray(a,n);
-    printf("\nMax_Two = %d ", searchMax2(a,n));
-    printf("\nMin_Two = %d ", searchMin2(a,n));
+    } while (n <= 0 || n > 100);
+    enterArray(a, n);
+    printArray(a, n);
+    printf("\nMax_Two = %d ", searchMax2(a, n));
+    printf("\nMin_Two = %d ", searchMin2(a, n));
     return 0;
 }
