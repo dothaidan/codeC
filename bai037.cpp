@@ -1,7 +1,7 @@
 // HỌC C CÙNG MÌNH
 // Bài 37: Tìm kiếm trong mảng hai chiều
 #include <stdio.h>
-int m,n,a[100][100];
+int m, n, a[100][100];
 
 // function enterArray
 void enterArray(int x[][100], int &m, int &n)
@@ -12,12 +12,12 @@ void enterArray(int x[][100], int &m, int &n)
         scanf("%d", &m);
         printf("Enter Column : ");
         scanf("%d", &n);
-    } while (m<=0 || m>100 || n<=0 || n>100);
-    for(int i=0; i<m; i++)
+    } while (m <= 0 || m > 100 || n <= 0 || n > 100);
+    for (int i = 0; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for (int j = 0; j < n; j++)
         {
-            printf(" Enter Element [%d][%d] : ",i,j);
+            printf(" Enter Element [%d][%d] : ", i, j);
             scanf("%d", &x[i][j]);
         }
     }
@@ -27,9 +27,9 @@ void enterArray(int x[][100], int &m, int &n)
 void printArray(int x[][100], int m, int n)
 {
     printf("Values Array : \n");
-    for(int i=0; i<m; i++)
+    for (int i = 0; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for (int j = 0; j < n; j++)
         {
             printf("\t%d", x[i][j]);
         }
@@ -40,13 +40,14 @@ void printArray(int x[][100], int m, int n)
 // function Search
 int Search(int x[][100], int m, int n, int values)
 {
-    int result=0;
-    for(int i=0; i<m; i++)
+    int result = 0;
+    for (int i = 0; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for (int j = 0; j < n; j++)
         {
-            if(x[i][j]==values){
-                result=1;
+            if (x[i][j] == values)
+            {
+                result = 1;
             }
         }
     }
@@ -62,23 +63,23 @@ void performSearch(int x[][100], int m, int n)
         int values;
         printf("Enter Search Values : ");
         scanf("%d", &values);
-        if(Search(a,m,n,values))
+        if (Search(a, m, n, values))
         {
             printf("Find !");
         }
-        else{
+        else
+        {
             printf("Not Find !");
         }
         printf("\nEnter Any Numbers To Continue, Enter Zero To Exit : ");
         scanf("%d", &option);
-    } while (option!=0);
-    
+    } while (option != 0);
 }
-int main ()
+int main()
 {
     // function call;
-    enterArray(a,m,n);
-    printArray(a,m,n);
-    performSearch(a,m,n);
+    enterArray(a, m, n);
+    printArray(a, m, n);
+    performSearch(a, m, n);
     return 0;
 }
