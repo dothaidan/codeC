@@ -1,5 +1,5 @@
 // HỌC C CÙNG MÌNH
-// Bài 27: Nhập mảng và sắp xếp mảng thep chiều
+// Bài 27: Nhập mảng và sắp xếp mảng theo chiều
 // tăng dần, giảm dần 
 #include <stdio.h>
 // function Enter Array
