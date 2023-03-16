@@ -4,18 +4,18 @@
 int m, n, a[100][100], b[10000], k;
 
 // function enterArray
-void enterArray(int x[][100], int &m, int &n)
+void enterArray(int x[][100], int *m, int *n)
 {
     do
     {
         printf("Enter Row : ");
-        scanf("%d", &m);
+        scanf("%d", &*m);
         printf("Enter Column : ");
-        scanf("%d", &n);
-    } while (m <= 0 || m > 100 || n <= 0 || n > 100);
-    for (int i = 0; i < m; i++)
+        scanf("%d", &*n);
+    } while (*m <= 0 || *m > 100 || *n <= 0 || *n > 100);
+    for (int i = 0; i < *m; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < *n; j++)
         {
             printf(" Enter Elemnet [%d][%d] : ", i, j);
             scanf("%d", &x[i][j]);
@@ -38,10 +38,10 @@ void printArray(int x[][100], int m, int n)
 }
 
 // function transferArray
-void transferArray(int x[][100], int m, int n, int y[], int &k)
+void transferArray(int x[][100], int m, int n, int y[], int *k)
 {
     int index = 0;
-    k = m * n;
+    *k = m * n;
     for (int i = 0; i < m; i++)
     {
         for (int j = 0; j < n; j++)
@@ -64,9 +64,9 @@ void printTransferArray(int y[], int k)
 int main()
 {
     // function call
-    enterArray(a, m, n);
+    enterArray(a, &m, &n);
     printArray(a, m, n);
-    transferArray(a, m, n, b, k);
+    transferArray(a, m, n, b, &k);
     printTransferArray(b, k);
     return 0;
 }

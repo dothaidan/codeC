@@ -4,17 +4,17 @@
 int n, a[100];
 
 // function enterArray
-void enterArray(int x[], int &n)
+void enterArray(int x[], int *n)
 {
 	do
 	{
 		printf("Enter Element n(0<n<=100) : ");
 		scanf("%d", &n);
-	} while (n <= 0 || n > 100);
-	for (int i = 0; i < n; i++)
+	} while (*n <= 0 || *n > 100);
+	for (int i = 0; i < *n; i++)
 	{
 		printf(" Enter Element [%d] : ", i);
-		scanf("%d", &x[i]);
+		scanf("%d", n+i);
 	}
 }
 
@@ -75,7 +75,7 @@ int longestIncrementingSubarray(int x[], int n)
 int main()
 {
 	// function call
-	enterArray(a, n);
+	enterArray(a, &n);
 	printArray(a, n);
 	longestIncrementingSubarray(a, n);
 	return 0;

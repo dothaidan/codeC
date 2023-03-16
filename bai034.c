@@ -3,9 +3,9 @@
 #include <stdio.h>
 int n1, n2, a[100], b[100];
 // function enterArray
-void enterArray(int x[], int &n)
+void enterArray(int x[], int *n)
 {
-    for(int i=0; i<n; i++)
+    for(int i=0; i<*n; i++)
     {
         printf(" Enter Element [%d] :", i);
         scanf("%d", &x[i]);
@@ -54,7 +54,7 @@ int main ()
         scanf("%d", &n1);
     }while(n1<=0 || n1>100);
     // function call 
-    enterArray(a,n1);
+    enterArray(a,&n1);
     printArray(a,n1);
     printf("\n");
     do 
@@ -63,7 +63,7 @@ int main ()
         scanf("%d", &n2);
     }while(n2<=0 || n2>100);
     // function call 
-    enterArray(b,n2);
+    enterArray(b,&n2);
     printArray(b,n2);
     printf("\n");
     // function call checkSubarray

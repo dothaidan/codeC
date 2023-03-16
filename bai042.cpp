@@ -1,7 +1,7 @@
 // HỌC C CÙNG MÌNH
 // Bài 42: Xóa một dòng hoặc cột trong mảng hai chiều
 #include <stdio.h>
-int m,n,a[100][100];
+int m, n, a[100][100];
 
 // function enterArray
 void enterArray(int x[][100], int &m, int &n)
@@ -12,25 +12,24 @@ void enterArray(int x[][100], int &m, int &n)
         scanf("%d", &m);
         printf("Enter Column : ");
         scanf("%d", &n);
-    } while (m<=0 || m>100 || n<=0 || n>100);
-    for(int i=0; i<m; i++)
+    } while (m <= 0 || m > 100 || n <= 0 || n > 100);
+    for (int i = 0; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for (int j = 0; j < n; j++)
         {
-            printf(" Enter Element [%d][%d] : ", i,j);
+            printf(" Enter Element [%d][%d] : ", i, j);
             scanf("%d", &x[i][j]);
         }
     }
 }
 
-
 // function printArray
 void printArray(int x[][100], int m, int n)
 {
     printf("\nValues Array : \n");
-    for(int i=0; i<m; i++)
+    for (int i = 0; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for (int j = 0; j < n; j++)
         {
             printf("\t%d", x[i][j]);
         }
@@ -44,11 +43,11 @@ void deleteRowArray(int x[][100], int &m, int n)
     int row;
     printf("\nEnter Row Delete : ");
     scanf("%d", &row);
-    for(int i=row; i<m; i++)
+    for (int i = row; i < m; i++)
     {
-        for(int j=0; j<n; j++)
+        for (int j = 0; j < n; j++)
         {
-            x[i][j]=x[i+1][j];
+            x[i][j] = x[i + 1][j];
         }
     }
     m--;
@@ -60,23 +59,23 @@ void deleteColumnArray(int x[][100], int m, int &n)
     int column;
     printf("\nEnter Column Delete : ");
     scanf("%d", &column);
-    for(int i=0; i<m; i++)
+    for (int i = 0; i < m; i++)
     {
-        for(int j=column; j<n; j++)
+        for (int j = column; j < n; j++)
         {
-            x[i][j]=x[i][j+1];
+            x[i][j] = x[i][j + 1];
         }
     }
     n--;
 }
-int main ()
+int main()
 {
     // function call
-    enterArray(a,m,n);
-    printArray(a,m,n);
-    deleteRowArray(a,m,n);
-    printArray(a,m,n);
-    deleteColumnArray(a,m,n);
-    printArray(a,m,n);
+    enterArray(a, m, n);
+    printArray(a, m, n);
+    deleteRowArray(a, m, n);
+    printArray(a, m, n);
+    deleteColumnArray(a, m, n);
+    printArray(a, m, n);
     return 0;
 }

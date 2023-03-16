@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <windows.h>
 // viết hàm
-void Heart(int N)
+void drawHeart(int N)
 {
     system("color 4");
     int i, j;
@@ -37,6 +37,6 @@ int main()
     int M = 6, N = 7;
     char c = 3;
     // lời gọi hàm
-    Heart(N);
+    drawHeart(N);
     return 0;
 }

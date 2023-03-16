@@ -5,18 +5,18 @@
 int m, n, a[100][100];
 
 // function enterArray
-void enterArray(int x[][100], int &m, int &n)
+void enterArray(int x[][100], int *m, int *n)
 {
     do
     {
         printf("Enter Row : ");
-        scanf("%d", &m);
+        scanf("%d", &*m);
         printf("Enter Column : ");
-        scanf("%d", &n);
-    } while (m <= 0 || m > 100 || n <= 0 || n > 100);
-    for (int i = 0; i < m; i++)
+        scanf("%d", &*n);
+    } while (*m <= 0 || *m > 100 || *n <= 0 || *n > 100);
+    for (int i = 0; i < *m; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < *n; j++)
         {
             printf(" Enter Element [%d][%d] : ", i, j);
             scanf("%d", &x[i][j]);
@@ -39,14 +39,14 @@ void printArray(int x[][100], int m, int n)
 }
 
 // function swapRowArray
-void swapRowArray(int x[][100], int &m, int n)
+void swapRowArray(int x[][100], int *m, int n)
 {
     int rowOne, rowTwo;
     printf("Enter The Line To Be Swapped : ");
     scanf("%d", &rowOne);
     printf("Enter The Line To BE Swapped : ");
     scanf("%d", &rowTwo);
-    for (int i = 0; i < m; i++)
+    for (int i = 0; i < *m; i++)
     {
         int temp = x[rowOne][i];
         x[rowOne][i] = x[rowTwo][i];
@@ -55,14 +55,14 @@ void swapRowArray(int x[][100], int &m, int n)
 }
 
 // function swapColumnArray
-void swapColumnArray(int x[][100], int m, int &n)
+void swapColumnArray(int x[][100], int m, int *n)
 {
     int columnOne, columnTwo;
     printf("Enter The Column To Be Swapped : ");
     scanf("%d", &columnOne);
     printf("Enter The Column To BE Swapped : ");
     scanf("%d", &columnTwo);
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < *n; i++)
     {
         int temp = x[i][columnOne];
         x[i][columnOne] = x[i][columnTwo];
@@ -72,11 +72,11 @@ void swapColumnArray(int x[][100], int m, int &n)
 int main()
 {
     // function call
-    enterArray(a, m, n);
+    enterArray(a, &m, &n);
     printArray(a, m, n);
-    swapRowArray(a, m, n);
+    swapRowArray(a, &m, n);
     printArray(a, m, n);
-    swapColumnArray(a, m, n);
+    swapColumnArray(a, m, &n);
     printArray(a, m, n);
     return 0;
 }

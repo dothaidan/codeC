@@ -3,9 +3,9 @@
 #include <stdio.h>
 int n, a[100], b[100], c[200];
 // function enterAray
-void enterArray(int x[], int &n)
+void enterArray(int x[], int *n)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < *n; i++)
     {
         printf(" Enter Elemnet [%d] : ", i);
         scanf("%d", &x[i]);
@@ -37,11 +37,11 @@ void sortArrayascending(int x[], int n)
     }
 }
 // function mixArray
-void mixArray(int x1[], int n_x1, int x2[], int n_x2, int x3[], int &n_x3)
+void mixArray(int x1[], int n_x1, int x2[], int n_x2, int x3[], int *n_x3)
 {
-    n_x3 = n_x1 + n_x2;
+    *n_x3 = n_x1 + n_x2;
     int i1 = 0, i2 = 0, i3 = 0;
-    while (i3 < n_x3)
+    while (i3 < *n_x3)
     {
         if (i1 >= n_x1)
         {
@@ -74,7 +74,7 @@ int main()
         scanf("%d", &n);
     } while (n <= 0 || n > 100);
     // funtion call
-    enterArray(a, n);
+    enterArray(a, &n);
     printArray(a, n);
     printf("\n");
     sortArrayascending(a, n);
@@ -86,14 +86,14 @@ int main()
         scanf("%d", &n);
     } while (n <= 0 || n > 100);
     // funtion call
-    enterArray(b, n);
+    enterArray(b, &n);
     printArray(b, n);
     printf("\n");
     sortArrayascending(b, n);
     printArray(b, n);
     // function call mixArray
     printf("\n");
-    mixArray(a, n, b, n, c, n);
+    mixArray(a, n, b, n, c, &n);
     printArray(c, n);
     return 0;
 }

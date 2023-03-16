@@ -12,11 +12,11 @@ void enterArray(int a[], int n)
     }
 }
 // function swap
-void swap(int &a, int &b)
+void swap(int *a, int *b)
 {
-    int temporary=a;
-    a=b;
-    b=temporary;
+    int temporary=*a;
+    *a=*b;
+    *b=temporary;
 }
 // function Array Increase 
 void arrayIncrease(int a[], int n)
@@ -31,7 +31,7 @@ void arrayIncrease(int a[], int n)
                 locationMax=j;
             }
         }
-        swap(a[i], a[locationMax]);
+        swap(&a[i], &a[locationMax]);
     }
 }
 
@@ -48,7 +48,7 @@ void arrayDecrease(int a[], int n)
                 locationMin=j;
             }
         }
-        swap(a[i], a[locationMin]);
+        swap(&a[i], &a[locationMin]);
     }
 }
 

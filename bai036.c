@@ -4,18 +4,18 @@
 int m, n, a[100][100];
 
 // function enterArray
-void enterArray(int x[][100], int &m, int &n)
+void enterArray(int x[][100], int *m, int *n)
 {
     do
     {
         printf("Enter Row : ");
-        scanf("%d", &m);
+        scanf("%d", &*m);
         printf("Enter Column : ");
-        scanf("%d", &n);
-    } while (m <= 0 || m > 100 || n <= 0 || n > 100);
-    for (int i = 0; i < m; i++)
+        scanf("%d", &*n);
+    } while (*m <= 0 || *m > 100 || *n <= 0 || *n > 100);
+    for (int i = 0; i < *m; i++)
     {
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < *n; j++)
         {
             printf(" Enter Element [%d][%d] : ", i, j);
             scanf("%d", &x[i][j]);
@@ -39,7 +39,7 @@ void printArray(int x[][100], int m, int n)
 int main()
 {
     // function call
-    enterArray(a, m, n);
+    enterArray(a, &m, &n);
     printArray(a, m, n);
     return 0;
 }
