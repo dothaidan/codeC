@@ -54,6 +54,7 @@ void processing()
     int money = 5000000, tienCuoc;
     do
     {
+    	system("cls");
         // tao menu
         printf("\n================== MOI BAN CHON ==================");
         printf("\n\t\t(1). Nhan 1 De Chon Le ");
