@@ -64,8 +64,11 @@ void processing()
         scanf("%d", &option);
 
         // xu li ket qua neu nguoi choi chon le
-        if (option == 1)
+        switch (option)
         {
+        case 1:
+        {
+
             if (option == 1)
             {
                 for (int i = 0; i <= 49; i++)
@@ -109,8 +112,9 @@ void processing()
                         exit(0);
                 }
             }
+            break;
         }
-        else if (option == 2) // xu li ket qua neu nguoi choi chon chan
+        case 2: // xu li ket qua neu nguoi choi chon chan
         {
             if (option == 2)
             {
@@ -156,10 +160,13 @@ void processing()
                 if (money == 0)
                     exit(0);
             }
+            break;
         }
-        else
+        case 0:
         {
             exit(0);
+            break;
+        }
         }
         printf("\n");
         for (int i = 0; i <= 49; i++)
