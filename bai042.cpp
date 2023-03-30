@@ -38,7 +38,7 @@ void printArray(int x[][100], int m, int n)
 }
 
 // function deleteRowArray
-void deleteRowArray(int x[][100], int &m, int n)
+void deleteRowArray(int x[][100], int &m, int &n)
 {
     int row;
     printf("\nEnter Row Delete : ");
@@ -54,7 +54,7 @@ void deleteRowArray(int x[][100], int &m, int n)
 }
 
 // function deleteColumnArray
-void deleteColumnArray(int x[][100], int m, int &n)
+void deleteColumnArray(int x[][100], int &m, int &n)
 {
     int column;
     printf("\nEnter Column Delete : ");

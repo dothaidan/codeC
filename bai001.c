@@ -17,6 +17,10 @@ int main()
         tong += i; // tổng = tổng + i
         i++;       // sau mỗi lần tính tổng xong sẽ tăng i lên 1
     }
+    for(i; i<=n; i++)
+    {
+        tong+=i;
+    }
     // giờ in ra tong là xong nhé !!
     printf("tong = %d", tong);
     getch(); // câu lênhj dừng màn hình
